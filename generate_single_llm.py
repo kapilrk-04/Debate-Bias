@@ -12,12 +12,26 @@ import argparse
 from tqdm import tqdm
 import logging
 from huggingface_hub import login
-from dotenv import load_dotenv
+import yaml
 
-load_dotenv()
+# Load secrets from secrets.yaml
+def load_secrets():
+    """Load secrets from secrets.yaml file."""
+    secrets_path = "secrets.yaml"
+    if not os.path.exists(secrets_path):
+        raise FileNotFoundError(
+            f"secrets.yaml not found. Please copy secrets.yaml.example to secrets.yaml "
+            f"and fill in your credentials."
+        )
+    with open(secrets_path, "r") as f:
+        return yaml.safe_load(f)
 
-# Get the token from environment variable
-hf_token = os.getenv("HF_TOKEN")
+secrets = load_secrets()
+hf_token = secrets.get("HF_TOKEN")
+
+# Set HF_HOME environment variable if specified
+if "HF_HOME" in secrets:
+    os.environ["HF_HOME"] = secrets["HF_HOME"]
 
 # Setup logging
 os.makedirs("logs", exist_ok=True)

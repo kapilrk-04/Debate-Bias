@@ -2,3 +2,21 @@ llama3_*
 prompt_multi.py
 prompt_selfreflect.py
 prompt_single.py
+
+# Secrets and credentials
+secrets.yaml
+.env
+
+# Logs
+logs/
+*.log
+
+# Outputs
+outputs/
+vllm_responses/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/

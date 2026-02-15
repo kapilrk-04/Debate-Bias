@@ -2,6 +2,15 @@
 
 This guide explains how to use the new generalized response generation scripts for judgment and plausibility tasks.
 
+## Prerequisites
+
+Before using these scripts, make sure you've completed the setup:
+
+1. **Install dependencies** (PyTorch, transformers, vLLM, etc.)
+2. **Configure secrets.yaml** with your HuggingFace token
+
+See [SETUP.md](SETUP.md) for detailed setup instructions.
+
 ## Overview
 
 Three new scripts have been created to handle different response generation scenarios:
