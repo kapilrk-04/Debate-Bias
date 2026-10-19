@@ -2,18 +2,20 @@
 
 # Response Generation Job Script
 # Runs single LLM, self-reflection, and multi-agent debate scenarios
+# Per-model vLLM settings (max_model_len, gpu_memory_utilization, etc.)
+# are loaded from model_configs.yaml by each Python script.
 
 set -e  # Exit on error
 
 # Define models to test
 MODELS=(
-    "meta-llama/Meta-Llama-3-8B-Instruct"
-    "meta-llama/Llama-3.1-8B-Instruct"
-    "meta-llama/Llama-3.2-3B-Instruct"
-    "CohereLabs/aya-23-8B"
+    "Qwen/Qwen3-4B-Instruct-2507"
     "google/gemma-3-4b-it"
+    "CohereLabs/aya-23-8B"
     "nvidia/Nemotron-4-Mini-Hindi-4B-Instruct"
-    "MBZUAI/Llama-3-Nanda-10B-Chat"
+    "CoRover/BharatGPT-3B-Indic"
+    "ai4bharat/Airavata"
+    "meta-llama/Llama-3.2-3B-Instruct"
 )
 
 # Define prompt files to process
@@ -44,6 +46,8 @@ echo "========================================"
 echo "Starting Response Generation Pipeline"
 echo "Backend: $BACKEND"
 echo "========================================"
+echo "Initial GPU state:"
+nvidia-smi || true
 
 # ============================================================================
 # PART 1: Single LLM Baseline
@@ -92,140 +96,151 @@ done
 # ============================================================================
 # PART 2: Self-Reflection
 # ============================================================================
-echo ""
-echo "=========================================="
-echo "PART 2: Self-Reflection"
-echo "=========================================="
+# echo ""
+# echo "=========================================="
+# echo "PART 2: Self-Reflection"
+# echo "=========================================="
 
-for MODEL in "${MODELS[@]}"; do
-    MODEL_SAFE="${MODEL//\//_}"
+# for MODEL in "${MODELS[@]}"; do
+#     MODEL_SAFE="${MODEL//\//_}"
 
-    for PROMPT_FILE in "${PROMPT_FILES[@]}"; do
-        PROMPT_NAME=$(basename "$PROMPT_FILE" .jsonl)
-        OUTPUT_FILE="outputs/selfreflect/${PROMPT_NAME}/${MODEL_SAFE}_reflected.jsonl"
+#     for PROMPT_FILE in "${PROMPT_FILES[@]}"; do
+#         PROMPT_NAME=$(basename "$PROMPT_FILE" .jsonl)
+#         OUTPUT_FILE="outputs/selfreflect/${PROMPT_NAME}/${MODEL_SAFE}_reflected.jsonl"
 
-        # Create output directory
-        mkdir -p "outputs/selfreflect/${PROMPT_NAME}"
+#         # Create output directory
+#         mkdir -p "outputs/selfreflect/${PROMPT_NAME}"
 
-        # Skip if already exists
-        if [ -f "$OUTPUT_FILE" ]; then
-            echo "Skipping $MODEL on $PROMPT_NAME (already exists)"
-            continue
-        fi
+#         # Skip if already exists
+#         if [ -f "$OUTPUT_FILE" ]; then
+#             echo "Skipping $MODEL on $PROMPT_NAME (already exists)"
+#             continue
+#         fi
 
-        echo ""
-        echo "Running Self-Reflection: $MODEL"
-        echo "Prompt File: $PROMPT_FILE"
-        echo "Output: $OUTPUT_FILE"
+#         echo ""
+#         echo "Running Self-Reflection: $MODEL"
+#         echo "Prompt File: $PROMPT_FILE"
+#         echo "Output: $OUTPUT_FILE"
 
-        python generate_selfreflect_llm.py \
-            --model-path "$MODEL" \
-            --input-file "$PROMPT_FILE" \
-            --output-file "$OUTPUT_FILE" \
-            --backend "$BACKEND" \
-            --max-tokens $MAX_TOKENS \
-            --temperature $TEMPERATURE \
-            --top-p $TOP_P
+#         python generate_selfreflect_llm.py \
+#             --model-path "$MODEL" \
+#             --input-file "$PROMPT_FILE" \
+#             --output-file "$OUTPUT_FILE" \
+#             --backend "$BACKEND" \
+#             --max-tokens $MAX_TOKENS \
+#             --temperature $TEMPERATURE \
+#             --top-p $TOP_P
 
-        echo "✓ Completed: $MODEL self-reflection on $PROMPT_NAME"
-    done
-done
+#         echo "✓ Completed: $MODEL self-reflection on $PROMPT_NAME"
+#     done
+# done
 
+# # ============================================================================
+# # PART 3: Multi-Agent Debate (Same Model)
+# # ============================================================================
+# echo ""
+# echo "=========================================="
+# echo "PART 3: Multi-Agent Debate (Same Model)"
+# echo "=========================================="
+
+# for MODEL in "${MODELS[@]}"; do
+#     MODEL_SAFE="${MODEL//\//_}"
+
+#     for PROMPT_FILE in "${PROMPT_FILES[@]}"; do
+#         PROMPT_NAME=$(basename "$PROMPT_FILE" .jsonl)
+#         OUTPUT_FILE="outputs/multi_agent_same/${PROMPT_NAME}/${MODEL_SAFE}_debate.jsonl"
+
+#         # Create output directory
+#         mkdir -p "outputs/multi_agent_same/${PROMPT_NAME}"
+
+#         # Skip if already exists
+#         if [ -f "$OUTPUT_FILE" ]; then
+#             echo "Skipping $MODEL on $PROMPT_NAME (already exists)"
+#             continue
+#         fi
+
+#         echo ""
+#         echo "Running Multi-Agent Debate (Same Model): $MODEL"
+#         echo "Prompt File: $PROMPT_FILE"
+#         echo "Output: $OUTPUT_FILE"
+#         echo "GPU state before run:"
+#         nvidia-smi || true
+
+#         python generate_multi_agent_sequential.py \
+#             --model1-path "$MODEL" \
+#             --same-model \
+#             --input-file "$PROMPT_FILE" \
+#             --output-file "$OUTPUT_FILE" \
+#             --backend "$BACKEND" \
+#             --max-tokens $MAX_TOKENS \
+#             --temperature $TEMPERATURE \
+#             --top-p $TOP_P
+
+#         echo "✓ Completed: $MODEL same-model debate on $PROMPT_NAME"
+#     done
+# done
+
+# # ============================================================================
+# # PART 4: Multi-Agent Debate (Different Models)
 # ============================================================================
-# PART 3: Multi-Agent Debate (Same Model)
-# ============================================================================
-echo ""
-echo "=========================================="
-echo "PART 3: Multi-Agent Debate (Same Model)"
-echo "=========================================="
+# echo ""
+# echo "=========================================="
+# echo "PART 4: Multi-Agent Debate (Different Models)"
+# echo "=========================================="
 
-for MODEL in "${MODELS[@]}"; do
-    MODEL_SAFE="${MODEL//\//_}"
+# # Define model pairs for debate
+# MODEL_PAIRS=(
+#     "Qwen/Qwen3-4B-Instruct-2507:ai4bharat/Airavata"
+#     "Qwen/Qwen3-4B-Instruct-2507:CoRover/BharatGPT-3B-Indic"
+#     "Qwen/Qwen3-4B-Instruct-2507:nvidia/Nemotron-4-Mini-Hindi-4B-Instruct"
+#     "meta-llama/Llama-3.2-3B-Instruct:ai4bharat/Airavata"
+#     "meta-llama/Llama-3.2-3B-Instruct:CoRover/BharatGPT-3B-Indic"
+#     "meta-llama/Llama-3.2-3B-Instruct:nvidia/Nemotron-4-Mini-Hindi-4B-Instruct"
+#     "google/gemma-3-4b-it:ai4bharat/Airavata"
+#     "google/gemma-3-4b-it:CoRover/BharatGPT-3B-Indic"
+#     "google/gemma-3-4b-it:nvidia/Nemotron-4-Mini-Hindi-4B-Instruct"
+#     "CohereLabs/aya-23-8B:ai4bharat/Airavata"
+#     "CohereLabs/aya-23-8B:CoRover/BharatGPT-3B-Indic"
+#     "CohereLabs/aya-23-8B:nvidia/Nemotron-4-Mini-Hindi-4B-Instruct"
+# )
 
-    for PROMPT_FILE in "${PROMPT_FILES[@]}"; do
-        PROMPT_NAME=$(basename "$PROMPT_FILE" .jsonl)
-        OUTPUT_FILE="outputs/multi_agent_same/${PROMPT_NAME}/${MODEL_SAFE}_debate.jsonl"
+# for PAIR in "${MODEL_PAIRS[@]}"; do
+#     MODEL1="${PAIR%%:*}"
+#     MODEL2="${PAIR##*:}"
+#     MODEL1_SAFE="${MODEL1//\//_}"
+#     MODEL2_SAFE="${MODEL2//\//_}"
 
-        # Create output directory
-        mkdir -p "outputs/multi_agent_same/${PROMPT_NAME}"
+#     for PROMPT_FILE in "${PROMPT_FILES[@]}"; do
+#         PROMPT_NAME=$(basename "$PROMPT_FILE" .jsonl)
+#         OUTPUT_FILE="outputs/multi_agent_diff/${PROMPT_NAME}/${MODEL1_SAFE}_vs_${MODEL2_SAFE}_debate.jsonl"
 
-        # Skip if already exists
-        if [ -f "$OUTPUT_FILE" ]; then
-            echo "Skipping $MODEL on $PROMPT_NAME (already exists)"
-            continue
-        fi
+#         # Create output directory
+#         mkdir -p "outputs/multi_agent_diff/${PROMPT_NAME}"
 
-        echo ""
-        echo "Running Multi-Agent Debate (Same Model): $MODEL"
-        echo "Prompt File: $PROMPT_FILE"
-        echo "Output: $OUTPUT_FILE"
+#         # Skip if already exists
+#         if [ -f "$OUTPUT_FILE" ]; then
+#             echo "Skipping $MODEL1 vs $MODEL2 on $PROMPT_NAME (already exists)"
+#             continue
+#         fi
 
-        python generate_multi_agent.py \
-            --model1-path "$MODEL" \
-            --same-model \
-            --input-file "$PROMPT_FILE" \
-            --output-file "$OUTPUT_FILE" \
-            --backend "$BACKEND" \
-            --max-tokens $MAX_TOKENS \
-            --temperature $TEMPERATURE \
-            --top-p $TOP_P
+#         echo ""
+#         echo "Running Multi-Agent Debate: $MODEL1 vs $MODEL2"
+#         echo "Prompt File: $PROMPT_FILE"
+#         echo "Output: $OUTPUT_FILE"
 
-        echo "✓ Completed: $MODEL same-model debate on $PROMPT_NAME"
-    done
-done
+#         python generate_multi_agent_sequential.py \
+#             --model1-path "$MODEL1" \
+#             --model2-path "$MODEL2" \
+#             --input-file "$PROMPT_FILE" \
+#             --output-file "$OUTPUT_FILE" \
+#             --backend "$BACKEND" \
+#             --max-tokens $MAX_TOKENS \
+#             --temperature $TEMPERATURE \
+#             --top-p $TOP_P
 
-# ============================================================================
-# PART 4: Multi-Agent Debate (Different Models)
-# ============================================================================
-echo ""
-echo "=========================================="
-echo "PART 4: Multi-Agent Debate (Different Models)"
-echo "=========================================="
-
-# Define model pairs for debate
-MODEL_PAIRS=(
-    "meta-llama/Meta-Llama-3-8B-Instruct:CohereLabs/aya-23-8B"
-    "meta-llama/Llama-3.1-8B-Instruct:google/gemma-3-4b-it"
-    "MBZUAI/Llama-3-Nanda-10B-Chat:nvidia/Nemotron-4-Mini-Hindi-4B-Instruct"
-)
-
-for PAIR in "${MODEL_PAIRS[@]}"; do
-    MODEL1="${PAIR%%:*}"
-    MODEL2="${PAIR##*:}"
-    MODEL1_SAFE="${MODEL1//\//_}"
-    MODEL2_SAFE="${MODEL2//\//_}"
-
-    for PROMPT_FILE in "${PROMPT_FILES[@]}"; do
-        PROMPT_NAME=$(basename "$PROMPT_FILE" .jsonl)
-        OUTPUT_FILE="outputs/multi_agent_diff/${PROMPT_NAME}/${MODEL1_SAFE}_vs_${MODEL2_SAFE}_debate.jsonl"
-
-        # Create output directory
-        mkdir -p "outputs/multi_agent_diff/${PROMPT_NAME}"
-
-        # Skip if already exists
-        if [ -f "$OUTPUT_FILE" ]; then
-            echo "Skipping $MODEL1 vs $MODEL2 on $PROMPT_NAME (already exists)"
-            continue
-        fi
-
-        echo ""
-        echo "Running Multi-Agent Debate: $MODEL1 vs $MODEL2"
-        echo "Prompt File: $PROMPT_FILE"
-        echo "Output: $OUTPUT_FILE"
-
-        python generate_multi_agent.py \
-            --model1-path "$MODEL1" \
-            --model2-path "$MODEL2" \
-            --input-file "$PROMPT_FILE" \
-            --output-file "$OUTPUT_FILE" \
-            --backend "$BACKEND" \
-            --max-tokens $MAX_TOKENS \
-            --temperature $TEMPERATURE \
-            --top-p $TOP_P
-
-        echo "✓ Completed: $MODEL1 vs $MODEL2 debate on $PROMPT_NAME"
-    done
-done
+#         echo "✓ Completed: $MODEL1 vs $MODEL2 debate on $PROMPT_NAME"
+#     done
+# done
 
 echo ""
 echo "========================================"
@@ -233,7 +248,7 @@ echo "Response Generation Pipeline Complete!"
 echo "========================================"
 echo "Results saved in:"
 echo "  - outputs/single_llm/"
-echo "  - outputs/selfreflect/"
-echo "  - outputs/multi_agent_same/"
-echo "  - outputs/multi_agent_diff/"
+# echo "  - outputs/selfreflect/"
+# echo "  - outputs/multi_agent_same/"
+# echo "  - outputs/multi_agent_diff/"
 echo "========================================"

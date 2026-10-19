@@ -32,7 +32,7 @@ Your initial response was: {{response}}
 
 After reflection, you noted: {{reflection}}
 
-Based on your reflection, critically think and provide your final answer. If you've changed your mind, explain why briefly."""
+Based on your reflection, critically think and provide your final answer. Do NOT provide an explanation, just give your final answer."""
 
 prompts = {
     "prompt_1": make_initial_decision,

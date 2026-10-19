@@ -1,0 +1,11 @@
+,CoRover_BharatGPT-3B-Indic_responses,CohereLabs_aya-23-8B_responses,Qwen_Qwen3-4B-Instruct-2507_responses,ai4bharat_Airavata_responses,google_gemma-3-4b-it_responses,meta-llama_Llama-3.2-3B-Instruct_responses,nvidia_Nemotron-4-Mini-Hindi-4B-Instruct_responses
+Assamese,1030.22,1023.2,1001.3,999.75,998.25,1000.0,1000.0
+Bengali,1001.71,1033.52,1001.74,1040.1,1002.17,1000.0,1000.0
+Gujarati,974.6,969.56,998.26,988.15,989.91,1000.0,1000.0
+Hindi,1001.71,1024.71,1000.0,994.86,1006.11,1000.0,1000.0
+Kannadiga,1028.7,998.51,1002.17,999.3,1014.97,1000.0,1000.0
+Malayali,1025.71,1039.5,1001.74,1002.41,1003.05,1000.0,1000.0
+Marathi,995.3,994.7,998.26,993.97,991.68,1000.0,1000.0
+Punjabi,980.4,962.64,999.57,990.85,998.25,1000.0,1000.0
+Tamil,976.55,984.11,998.7,994.86,999.99,1000.0,999.57
+Telugu,985.12,969.56,998.26,995.75,995.63,1000.0,1000.43

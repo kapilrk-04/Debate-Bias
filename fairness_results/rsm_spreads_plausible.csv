@@ -1,0 +1,72 @@
+source,source_display,task,model,spread,mean_val,max_val,min_val,n_identities
+single_llm,Single-LLM,plausible,BharatGPT-3B,23.9615,-0.0,10.1291,-13.8324,10
+single_llm,Single-LLM,plausible,Aya-23-8B,25.7822,0.0,11.7041,-14.0781,10
+single_llm,Single-LLM,plausible,Qwen3-4B,23.8917,0.0,14.1897,-9.702,10
+single_llm,Single-LLM,plausible,Airavata-7B,306.8457,-0.0,98.0046,-208.8411,10
+single_llm,Single-LLM,plausible,Gemma3-4B-IT,9.5578,0.0,6.0867,-3.4711,10
+single_llm,Single-LLM,plausible,Llama-3.2-3B,33.4801,0.0,13.2357,-20.2444,10
+single_llm,Single-LLM,plausible,Nemo-Hindi-4B,231.5974,0.0,104.0725,-127.5249,10
+selfreflect,Self-Reflect,plausible,BharatGPT-3B,47.9938,0.0,18.8309,-29.1629,10
+selfreflect,Self-Reflect,plausible,Aya-23-8B,46.1929,0.0,16.6865,-29.5064,10
+selfreflect,Self-Reflect,plausible,Qwen3-4B,5.1978,0.0,3.4657,-1.7321,10
+selfreflect,Self-Reflect,plausible,Airavata-7B,81.7704,-0.0,47.6556,-34.1148,10
+selfreflect,Self-Reflect,plausible,Gemma3-4B-IT,18.2682,0.0,10.4246,-7.8436,10
+selfreflect,Self-Reflect,plausible,Llama-3.2-3B,17.4255,0.0,9.5758,-7.8497,10
+selfreflect,Self-Reflect,plausible,Nemo-Hindi-4B,15.8181,0.0,7.8693,-7.9488,10
+gemma_diff,Gemma(D),plausible,Aya-23-8B vs BharatGPT-3B,58.8946,-0.0,30.4863,-28.4083,10
+gemma_diff,Gemma(D),plausible,Aya-23-8B vs Airavata-7B,62.4313,0.0,26.2205,-36.2108,10
+gemma_diff,Gemma(D),plausible,Aya-23-8B vs Nemo-Hindi-4B,37.3211,0.0,18.8403,-18.4808,10
+gemma_diff,Gemma(D),plausible,Qwen3-4B vs BharatGPT-3B,26.0264,-0.0,15.2459,-10.7805,10
+gemma_diff,Gemma(D),plausible,Qwen3-4B vs Airavata-7B,21.4078,0.0,8.0896,-13.3182,10
+gemma_diff,Gemma(D),plausible,Qwen3-4B vs Nemo-Hindi-4B,13.04,0.0,6.0876,-6.9524,10
+gemma_diff,Gemma(D),plausible,Gemma3-4B-IT vs BharatGPT-3B,39.9885,0.0,21.9293,-18.0592,10
+gemma_diff,Gemma(D),plausible,Gemma3-4B-IT vs Airavata-7B,55.8843,0.0,39.4011,-16.4832,10
+gemma_diff,Gemma(D),plausible,Gemma3-4B-IT vs Nemo-Hindi-4B,54.1155,0.0,27.718,-26.3975,10
+gemma_diff,Gemma(D),plausible,Llama-3.2-3B vs BharatGPT-3B,30.708,0.0,19.7214,-10.9866,10
+gemma_diff,Gemma(D),plausible,Llama-3.2-3B vs Airavata-7B,40.9587,0.0,24.2746,-16.6841,10
+gemma_diff,Gemma(D),plausible,Llama-3.2-3B vs Nemo-Hindi-4B,51.1484,0.0,22.7916,-28.3568,10
+gemma_same,Gemma(S),plausible,BharatGPT-3B,36.0823,-0.0,21.0094,-15.0729,10
+gemma_same,Gemma(S),plausible,Aya-23-8B,31.4893,-0.0,14.8772,-16.6121,10
+gemma_same,Gemma(S),plausible,Qwen3-4B,19.2485,-0.0,9.6221,-9.6264,10
+gemma_same,Gemma(S),plausible,Airavata-7B,42.6408,0.0,18.2422,-24.3986,10
+gemma_same,Gemma(S),plausible,Gemma3-4B-IT,65.4874,0.0,31.7053,-33.7821,10
+gemma_same,Gemma(S),plausible,Llama-3.2-3B,38.5322,0.0,19.6561,-18.8761,10
+gemma_same,Gemma(S),plausible,Nemo-Hindi-4B,118.5824,-0.0,80.6476,-37.9348,10
+gpt_diff,GPT(D),plausible,Aya-23-8B vs BharatGPT-3B,59.4156,0.0,30.5298,-28.8858,10
+gpt_diff,GPT(D),plausible,Aya-23-8B vs Airavata-7B,55.797,0.0,25.6688,-30.1282,10
+gpt_diff,GPT(D),plausible,Aya-23-8B vs Nemo-Hindi-4B,40.6056,-0.0,24.4892,-16.1164,10
+gpt_diff,GPT(D),plausible,Qwen3-4B vs BharatGPT-3B,13.1819,-0.0,7.9325,-5.2494,10
+gpt_diff,GPT(D),plausible,Qwen3-4B vs Airavata-7B,18.4854,0.0,12.3351,-6.1503,10
+gpt_diff,GPT(D),plausible,Qwen3-4B vs Nemo-Hindi-4B,34.3787,-0.0,22.0982,-12.2805,10
+gpt_diff,GPT(D),plausible,Gemma3-4B-IT vs BharatGPT-3B,34.711,-0.0,23.2848,-11.4262,10
+gpt_diff,GPT(D),plausible,Gemma3-4B-IT vs Airavata-7B,53.0473,0.0,37.0088,-16.0385,10
+gpt_diff,GPT(D),plausible,Gemma3-4B-IT vs Nemo-Hindi-4B,58.6626,-0.0,28.7166,-29.946,10
+gpt_diff,GPT(D),plausible,Llama-3.2-3B vs BharatGPT-3B,28.6743,0.0,13.4019,-15.2724,10
+gpt_diff,GPT(D),plausible,Llama-3.2-3B vs Airavata-7B,46.0321,0.0,29.2916,-16.7405,10
+gpt_diff,GPT(D),plausible,Llama-3.2-3B vs Nemo-Hindi-4B,55.3894,0.0,25.5749,-29.8145,10
+gpt_same,GPT(S),plausible,BharatGPT-3B,22.2024,-0.0,9.1504,-13.052,10
+gpt_same,GPT(S),plausible,Aya-23-8B,32.4416,0.0,12.2931,-20.1485,10
+gpt_same,GPT(S),plausible,Qwen3-4B,17.4797,0.0,8.7371,-8.7426,10
+gpt_same,GPT(S),plausible,Airavata-7B,46.6599,-0.0,23.9654,-22.6945,10
+gpt_same,GPT(S),plausible,Gemma3-4B-IT,56.7541,-0.0,28.0934,-28.6607,10
+gpt_same,GPT(S),plausible,Llama-3.2-3B,36.3381,0.0,19.0958,-17.2423,10
+gpt_same,GPT(S),plausible,Nemo-Hindi-4B,129.2967,0.0,86.8005,-42.4962,10
+indic_diff,Krutrim(D),plausible,Aya-23-8B vs BharatGPT-3B,30.7277,-0.0,10.146,-20.5817,10
+indic_diff,Krutrim(D),plausible,Aya-23-8B vs Airavata-7B,47.1724,0.0,18.115,-29.0574,10
+indic_diff,Krutrim(D),plausible,Aya-23-8B vs Nemo-Hindi-4B,205.9374,-0.0,108.0842,-97.8532,10
+indic_diff,Krutrim(D),plausible,Qwen3-4B vs BharatGPT-3B,29.4772,0.0,14.3635,-15.1137,10
+indic_diff,Krutrim(D),plausible,Qwen3-4B vs Airavata-7B,25.4135,0.0,16.0812,-9.3323,10
+indic_diff,Krutrim(D),plausible,Qwen3-4B vs Nemo-Hindi-4B,45.2559,0.0,14.7522,-30.5037,10
+indic_diff,Krutrim(D),plausible,Gemma3-4B-IT vs BharatGPT-3B,46.966,0.0,24.006,-22.96,10
+indic_diff,Krutrim(D),plausible,Gemma3-4B-IT vs Airavata-7B,47.021,-0.0,27.7948,-19.2262,10
+indic_diff,Krutrim(D),plausible,Gemma3-4B-IT vs Nemo-Hindi-4B,44.4696,0.0,18.375,-26.0946,10
+indic_diff,Krutrim(D),plausible,Llama-3.2-3B vs BharatGPT-3B,47.6746,0.0,28.2301,-19.4445,10
+indic_diff,Krutrim(D),plausible,Llama-3.2-3B vs Airavata-7B,53.2343,0.0,28.3621,-24.8722,10
+indic_diff,Krutrim(D),plausible,Llama-3.2-3B vs Nemo-Hindi-4B,53.7469,0.0,35.0695,-18.6774,10
+indic_same,Krutrim(S),plausible,BharatGPT-3B,22.1272,-0.0,11.556,-10.5712,10
+indic_same,Krutrim(S),plausible,Aya-23-8B,36.1049,-0.0,14.1657,-21.9392,10
+indic_same,Krutrim(S),plausible,Qwen3-4B,30.1114,-0.0,14.9862,-15.1252,10
+indic_same,Krutrim(S),plausible,Airavata-7B,28.1956,0.0,14.097,-14.0986,10
+indic_same,Krutrim(S),plausible,Gemma3-4B-IT,48.1191,0.0,23.8291,-24.29,10
+indic_same,Krutrim(S),plausible,Llama-3.2-3B,48.776,0.0,27.2464,-21.5296,10
+indic_same,Krutrim(S),plausible,Nemo-Hindi-4B,195.9785,-0.0,120.5291,-75.4494,10

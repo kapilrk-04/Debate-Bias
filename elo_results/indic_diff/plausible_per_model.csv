@@ -1,0 +1,11 @@
+,CohereLabs_aya-23-8B_vs_CoRover_BharatGPT-3B-Indic_debate,CohereLabs_aya-23-8B_vs_ai4bharat_Airavata_debate,CohereLabs_aya-23-8B_vs_nvidia_Nemotron-4-Mini-Hindi-4B-Instruct_debate,Qwen_Qwen3-4B-Instruct-2507_vs_CoRover_BharatGPT-3B-Indic_debate,Qwen_Qwen3-4B-Instruct-2507_vs_ai4bharat_Airavata_debate,Qwen_Qwen3-4B-Instruct-2507_vs_nvidia_Nemotron-4-Mini-Hindi-4B-Instruct_debate,google_gemma-3-4b-it_vs_CoRover_BharatGPT-3B-Indic_debate,google_gemma-3-4b-it_vs_ai4bharat_Airavata_debate,google_gemma-3-4b-it_vs_nvidia_Nemotron-4-Mini-Hindi-4B-Instruct_debate,meta-llama_Llama-3.2-3B-Instruct_vs_CoRover_BharatGPT-3B-Indic_debate,meta-llama_Llama-3.2-3B-Instruct_vs_ai4bharat_Airavata_debate,meta-llama_Llama-3.2-3B-Instruct_vs_nvidia_Nemotron-4-Mini-Hindi-4B-Instruct_debate
+Assamese,1043.28,981.79,815.31,1034.37,1010.13,909.07,1028.08,992.01,881.99,1082.95,1022.34,896.53
+Bengali,1035.52,1002.21,877.16,1033.33,1008.8,948.1,1031.1,998.64,908.01,1087.23,1050.49,934.48
+Gujarati,950.37,1007.93,1159.21,964.09,991.23,1045.48,975.75,1009.7,1081.73,871.11,926.72,1027.24
+Hindi,1010.78,989.89,901.31,1006.55,1000.01,949.45,991.72,984.38,914.36,1048.79,1015.43,940.4
+Kannadiga,1018.09,994.31,949.45,1014.06,999.14,972.92,1014.16,987.09,960.7,1029.97,1016.41,965.29
+Malayali,1008.85,1013.71,991.38,1007.48,1010.57,997.19,1009.53,1004.82,991.52,1005.91,1010.09,992.59
+Marathi,1004.52,997.38,1016.96,1001.9,994.75,996.03,1001.3,1005.26,1010.43,989.35,1001.9,998.38
+Punjabi,969.01,1006.6,1137.51,966.2,982.26,1086.36,994.46,1024.36,1122.85,942.96,976.73,1105.62
+Tamil,968.48,1007.04,1092.07,982.68,998.26,1057.59,977.2,1000.84,1079.16,956.1,981.84,1073.34
+Telugu,991.08,999.14,1059.64,989.32,1004.84,1037.81,976.72,992.9,1049.27,985.62,998.05,1066.12

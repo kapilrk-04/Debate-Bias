@@ -17,6 +17,8 @@ import logging
 from huggingface_hub import login
 import yaml
 import prompts_multi_new as prompts_module
+from model_config_loader import load_model_config
+from chat_template_utils import format_messages_for_model
 
 # Load secrets from secrets.yaml
 def load_secrets():
@@ -57,16 +59,13 @@ else:
 def generate_single_vllm(llm, tokenizer, prompt, sampling_params, model_config):
     """Generate a single response using vLLM."""
     messages = [{"role": "user", "content": prompt}]
-
-    if "enable_thinking" in model_config:
-        formatted = tokenizer.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True,
-            enable_thinking=model_config["enable_thinking"]
-        )
-    else:
-        formatted = tokenizer.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True
-        )
+    formatted = format_messages_for_model(
+        tokenizer=tokenizer,
+        model_path=model_config.get("model_path", ""),
+        messages=messages,
+        add_generation_prompt=True,
+        enable_thinking=model_config.get("enable_thinking"),
+    )
 
     outputs = llm.generate([formatted], sampling_params)
     response = outputs[0].outputs[0].text.strip()
@@ -77,9 +76,14 @@ def generate_single_transformers(model, tokenizer, prompt, max_new_tokens):
     """Generate a single response using transformers."""
     messages = [{"role": "user", "content": prompt}]
 
-    input_ids = tokenizer.apply_chat_template(
-        messages, add_generation_prompt=True, return_tensors="pt"
-    ).to(model.device)
+    formatted = format_messages_for_model(
+        tokenizer=tokenizer,
+        model_path=getattr(tokenizer, "name_or_path", ""),
+        messages=messages,
+        add_generation_prompt=True,
+        enable_thinking=None,
+    )
+    input_ids = tokenizer(formatted, return_tensors="pt").input_ids.to(model.device)
 
     # Determine terminators
     terminators = [tokenizer.eos_token_id]
@@ -98,14 +102,18 @@ def generate_single_transformers(model, tokenizer, prompt, max_new_tokens):
 
     response = outputs[0][input_ids.shape[-1]:]
     generation = tokenizer.decode(response, skip_special_tokens=True)
-    formatted = tokenizer.decode(input_ids[0], skip_special_tokens=False)
-
     return formatted, generation.strip()
 
 
-def load_model_and_tokenizer(model_path, backend, hf_home):
+def load_model_and_tokenizer(model_path, backend, hf_home, model_config):
     """Load model and tokenizer based on backend."""
     if backend == "vllm":
+        attn_backend = model_config.get("attention_backend")
+        if attn_backend:
+            os.environ["VLLM_ATTENTION_BACKEND"] = attn_backend
+            logging.info(f"Using attention backend override for {model_path}: {attn_backend}")
+            print(f"Using attention backend override for {model_path}: {attn_backend}")
+
         from vllm import LLM
         from transformers import AutoTokenizer
 
@@ -113,16 +121,20 @@ def load_model_and_tokenizer(model_path, backend, hf_home):
         llm = LLM(
             model=model_path,
             tokenizer=model_path,
-            dtype="auto",
+            dtype=model_config.get("dtype", "auto"),
             tensor_parallel_size=1,
             max_num_seqs=1,
-            gpu_memory_utilization=0.45,  # Use less memory to fit 2 models
-            download_dir=hf_home
+            gpu_memory_utilization=model_config["gpu_memory_utilization"],
+            max_model_len=model_config["max_model_len"],
+            download_dir=hf_home,
+            trust_remote_code=model_config.get("trust_remote_code", False),
+            enforce_eager=model_config.get("enforce_eager", False),
+            hf_overrides=model_config.get("hf_overrides", {})
         )
         tokenizer = AutoTokenizer.from_pretrained(
             model_path,
             cache_dir=hf_home,
-            trust_remote_code=True
+            trust_remote_code=model_config.get("trust_remote_code", False)
         )
         return llm, tokenizer
 
@@ -133,14 +145,14 @@ def load_model_and_tokenizer(model_path, backend, hf_home):
         tokenizer = AutoTokenizer.from_pretrained(
             model_path,
             cache_dir=hf_home,
-            trust_remote_code=True
+            trust_remote_code=model_config.get("trust_remote_code", False)
         )
         model = AutoModelForCausalLM.from_pretrained(
             model_path,
             torch_dtype=torch.bfloat16,
             cache_dir=hf_home,
             device_map="auto",
-            trust_remote_code=True
+            trust_remote_code=model_config.get("trust_remote_code", False)
         )
         return model, tokenizer
 
@@ -175,22 +187,30 @@ def main():
     # Create output directory
     os.makedirs(os.path.dirname(args.output_file), exist_ok=True)
 
-    # Model configuration (simplified)
-    model_config = {}
+    # Load per-model configs from model_configs.yaml
+    model1_config = load_model_config(model1_path)
+    model2_config = load_model_config(model2_path)
+    model1_config["model_path"] = model1_path
+    model2_config["model_path"] = model2_path
+    logging.info(f"Model1 config: {model1_config}")
+    logging.info(f"Model2 config: {model2_config}")
+    print(f"Model1 config: {model1_config}")
+    print(f"Model2 config: {model2_config}")
+
     hf_home = os.getenv("HF_HOME", None)
 
     # Initialize models and tokenizers
     if args.backend == "vllm":
         from vllm import SamplingParams
 
-        llm1, tokenizer1 = load_model_and_tokenizer(model1_path, "vllm", hf_home)
+        llm1, tokenizer1 = load_model_and_tokenizer(model1_path, "vllm", hf_home, model1_config)
 
         # Load second model if different
         if model1_path == model2_path:
             llm2, tokenizer2 = llm1, tokenizer1
             print("Note: Using the same vLLM instance for both agents (for true separation, use transformers backend)")
         else:
-            llm2, tokenizer2 = load_model_and_tokenizer(model2_path, "vllm", hf_home)
+            llm2, tokenizer2 = load_model_and_tokenizer(model2_path, "vllm", hf_home, model2_config)
 
         sampling_params = SamplingParams(
             temperature=args.temperature,
@@ -199,13 +219,13 @@ def main():
         )
 
     else:  # transformers
-        model1, tokenizer1 = load_model_and_tokenizer(model1_path, "transformers", hf_home)
+        model1, tokenizer1 = load_model_and_tokenizer(model1_path, "transformers", hf_home, model1_config)
 
         # Load second model if different, otherwise use same model
         if model1_path == model2_path:
             model2, tokenizer2 = model1, tokenizer1
         else:
-            model2, tokenizer2 = load_model_and_tokenizer(model2_path, "transformers", hf_home)
+            model2, tokenizer2 = load_model_and_tokenizer(model2_path, "transformers", hf_home, model2_config)
 
     # Load input data
     logging.info(f"Loading input from {args.input_file}")
@@ -225,7 +245,7 @@ def main():
 
         if args.backend == "vllm":
             formatted_1_agent1, response_1_agent1 = generate_single_vllm(
-                llm1, tokenizer1, prompt_1_agent1, sampling_params, model_config
+                llm1, tokenizer1, prompt_1_agent1, sampling_params, model1_config
             )
         else:
             formatted_1_agent1, response_1_agent1 = generate_single_transformers(
@@ -238,7 +258,7 @@ def main():
 
         if args.backend == "vllm":
             formatted_1_agent2, response_1_agent2 = generate_single_vllm(
-                llm2, tokenizer2, prompt_1_agent2, sampling_params, model_config
+                llm2, tokenizer2, prompt_1_agent2, sampling_params, model2_config
             )
         else:
             formatted_1_agent2, response_1_agent2 = generate_single_transformers(
@@ -251,7 +271,7 @@ def main():
 
         if args.backend == "vllm":
             formatted_2_agent1, response_2_agent1 = generate_single_vllm(
-                llm1, tokenizer1, prompt_2_agent1, sampling_params, model_config
+                llm1, tokenizer1, prompt_2_agent1, sampling_params, model1_config
             )
         else:
             formatted_2_agent1, response_2_agent1 = generate_single_transformers(
@@ -264,7 +284,7 @@ def main():
 
         if args.backend == "vllm":
             formatted_2_agent2, response_2_agent2 = generate_single_vllm(
-                llm2, tokenizer2, prompt_2_agent2, sampling_params, model_config
+                llm2, tokenizer2, prompt_2_agent2, sampling_params, model2_config
             )
         else:
             formatted_2_agent2, response_2_agent2 = generate_single_transformers(
@@ -277,7 +297,7 @@ def main():
 
         if args.backend == "vllm":
             formatted_3_agent1, response_3_agent1 = generate_single_vllm(
-                llm1, tokenizer1, prompt_3_agent1, sampling_params, model_config
+                llm1, tokenizer1, prompt_3_agent1, sampling_params, model1_config
             )
         else:
             formatted_3_agent1, response_3_agent1 = generate_single_transformers(
@@ -290,7 +310,7 @@ def main():
 
         if args.backend == "vllm":
             formatted_3_agent2, response_3_agent2 = generate_single_vllm(
-                llm2, tokenizer2, prompt_3_agent2, sampling_params, model_config
+                llm2, tokenizer2, prompt_3_agent2, sampling_params, model2_config
             )
         else:
             formatted_3_agent2, response_3_agent2 = generate_single_transformers(

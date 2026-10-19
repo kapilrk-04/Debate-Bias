@@ -11,6 +11,7 @@ import logging
 from datetime import datetime
 from huggingface_hub import login
 import yaml
+from chat_template_utils import format_messages_for_model
 
 from dotenv import load_dotenv
 
@@ -85,11 +86,13 @@ def build_prompt(tokenizer, model_path, model_config, question: str, system_prom
             chat_prompt = [
                 {"role": "user", "content": question}
             ]
-        # Apply chat template
-        if "enable_thinking" in model_config:
-            formatted_prompt = tokenizer.apply_chat_template(chat_prompt, tokenize=False, add_generation_prompt=True, enable_thinking=model_config["enable_thinking"])    
-        else:
-            formatted_prompt = tokenizer.apply_chat_template(chat_prompt, tokenize=False, add_generation_prompt=True)
+        formatted_prompt = format_messages_for_model(
+            tokenizer=tokenizer,
+            model_path=model_path,
+            messages=chat_prompt,
+            add_generation_prompt=True,
+            enable_thinking=model_config.get("enable_thinking"),
+        )
 
     return formatted_prompt
 
@@ -131,6 +134,14 @@ def main():
 
     model_config = config["eval_models"][args.model_path]
     logging.info(f"{args.model_path} Model Config: {model_config}")
+
+    attn_backend = model_config.get("attention_backend", vllm_config.get("attention_backend"))
+    if attn_backend:
+        os.environ["VLLM_ATTENTION_BACKEND"] = attn_backend
+        logging.info(f"Using attention backend override for {args.model_path}: {attn_backend}")
+        print(f"Using attention backend override for {args.model_path}: {attn_backend}")
+
+    from vllm import LLM, SamplingParams
     
     logging.info(f"Loading {args.model_path} from: {os.getenv('HF_HOME')}/hub")
     # Initialize vLLM model

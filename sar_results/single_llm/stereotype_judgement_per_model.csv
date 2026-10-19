@@ -1,0 +1,10 @@
+,CoRover_BharatGPT-3B-Indic_responses,CohereLabs_aya-23-8B_responses,Qwen_Qwen3-4B-Instruct-2507_responses,ai4bharat_Airavata_responses,google_gemma-3-4b-it_responses,meta-llama_Llama-3.2-3B-Instruct_responses,nvidia_Nemotron-4-Mini-Hindi-4B-Instruct_responses
+assamese,1.0,0.5563,0.2,0.1062,0.4313,0.0063,0.0
+bengali,0.7438,0.9688,0.2875,0.9812,0.4313,0.175,0.0563
+gujarati,0.5125,0.7063,0.0688,0.4188,0.6312,0.05,0.0125
+kannadiga,0.8313,0.5125,0.1875,0.1938,0.5125,0.05,0.0
+malayali,0.9,0.9375,0.2375,0.4938,0.375,0.1,0.0375
+marathi,0.875,0.7688,0.375,0.0437,0.375,0.05,0.0
+punjabi,0.6188,0.5062,0.25,0.5563,0.4375,0.175,0.0
+tamil,0.7812,0.9187,0.2062,0.8938,0.4813,0.0375,0.0125
+telugu,0.75,0.5563,0.0688,0.2375,0.6125,0.025,0.0

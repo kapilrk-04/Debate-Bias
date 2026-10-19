@@ -1,0 +1,11 @@
+task,identity,fairest_source,min_spread
+plausible,Assamese,Self-Reflect,35.8748
+plausible,Bengali,Self-Reflect,28.0469
+plausible,Gujarati,Self-Reflect,50.2933
+plausible,Hindi,GPT(S),19.1927
+plausible,Kannadiga,Self-Reflect,19.5129
+plausible,Malayali,Single-LLM,22.1689
+plausible,Marathi,GPT(D),14.7727
+plausible,Punjabi,Gemma(D),37.3078
+plausible,Tamil,Gemma(D),12.9203
+plausible,Telugu,GPT(S),19.6114

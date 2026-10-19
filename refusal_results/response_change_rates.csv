@@ -1,0 +1,271 @@
+source,task,model,agent,total,changed,change_rate
+multi_agent_diff,bias_judgement_negative,Aya-23-8B vs Airavata-7B,agent1,450,47,0.1044
+multi_agent_diff,bias_judgement_negative,Aya-23-8B vs Airavata-7B,agent2,450,22,0.0489
+multi_agent_diff,bias_judgement_negative,Aya-23-8B vs BharatGPT-3B,agent1,450,138,0.3067
+multi_agent_diff,bias_judgement_negative,Aya-23-8B vs BharatGPT-3B,agent2,450,177,0.3933
+multi_agent_diff,bias_judgement_negative,Aya-23-8B vs Nemo-Hindi-4B,agent1,450,54,0.12
+multi_agent_diff,bias_judgement_negative,Aya-23-8B vs Nemo-Hindi-4B,agent2,450,267,0.5933
+multi_agent_diff,bias_judgement_negative,Gemma3-4B-IT vs Airavata-7B,agent1,450,66,0.1467
+multi_agent_diff,bias_judgement_negative,Gemma3-4B-IT vs Airavata-7B,agent2,450,61,0.1356
+multi_agent_diff,bias_judgement_negative,Gemma3-4B-IT vs BharatGPT-3B,agent1,450,89,0.1978
+multi_agent_diff,bias_judgement_negative,Gemma3-4B-IT vs BharatGPT-3B,agent2,450,200,0.4444
+multi_agent_diff,bias_judgement_negative,Gemma3-4B-IT vs Nemo-Hindi-4B,agent1,450,82,0.1822
+multi_agent_diff,bias_judgement_negative,Gemma3-4B-IT vs Nemo-Hindi-4B,agent2,450,280,0.6222
+multi_agent_diff,bias_judgement_negative,Llama-3.2-3B vs Airavata-7B,agent1,450,56,0.1244
+multi_agent_diff,bias_judgement_negative,Llama-3.2-3B vs Airavata-7B,agent2,450,48,0.1067
+multi_agent_diff,bias_judgement_negative,Llama-3.2-3B vs BharatGPT-3B,agent1,450,86,0.1911
+multi_agent_diff,bias_judgement_negative,Llama-3.2-3B vs BharatGPT-3B,agent2,450,166,0.3689
+multi_agent_diff,bias_judgement_negative,Llama-3.2-3B vs Nemo-Hindi-4B,agent1,450,57,0.1267
+multi_agent_diff,bias_judgement_negative,Llama-3.2-3B vs Nemo-Hindi-4B,agent2,450,266,0.5911
+multi_agent_diff,bias_judgement_negative,Qwen3-4B vs Airavata-7B,agent1,450,13,0.0289
+multi_agent_diff,bias_judgement_negative,Qwen3-4B vs Airavata-7B,agent2,450,43,0.0956
+multi_agent_diff,bias_judgement_negative,Qwen3-4B vs BharatGPT-3B,agent1,450,16,0.0356
+multi_agent_diff,bias_judgement_negative,Qwen3-4B vs BharatGPT-3B,agent2,450,192,0.4267
+multi_agent_diff,bias_judgement_negative,Qwen3-4B vs Nemo-Hindi-4B,agent1,450,13,0.0289
+multi_agent_diff,bias_judgement_negative,Qwen3-4B vs Nemo-Hindi-4B,agent2,450,277,0.6156
+multi_agent_diff,bias_judgement_positive,Aya-23-8B vs Airavata-7B,agent1,450,73,0.1622
+multi_agent_diff,bias_judgement_positive,Aya-23-8B vs Airavata-7B,agent2,450,36,0.08
+multi_agent_diff,bias_judgement_positive,Aya-23-8B vs BharatGPT-3B,agent1,450,149,0.3311
+multi_agent_diff,bias_judgement_positive,Aya-23-8B vs BharatGPT-3B,agent2,450,81,0.18
+multi_agent_diff,bias_judgement_positive,Aya-23-8B vs Nemo-Hindi-4B,agent1,450,88,0.1956
+multi_agent_diff,bias_judgement_positive,Aya-23-8B vs Nemo-Hindi-4B,agent2,450,159,0.3533
+multi_agent_diff,bias_judgement_positive,Gemma3-4B-IT vs Airavata-7B,agent1,450,71,0.1578
+multi_agent_diff,bias_judgement_positive,Gemma3-4B-IT vs Airavata-7B,agent2,450,69,0.1533
+multi_agent_diff,bias_judgement_positive,Gemma3-4B-IT vs BharatGPT-3B,agent1,450,124,0.2756
+multi_agent_diff,bias_judgement_positive,Gemma3-4B-IT vs BharatGPT-3B,agent2,450,122,0.2711
+multi_agent_diff,bias_judgement_positive,Gemma3-4B-IT vs Nemo-Hindi-4B,agent1,450,90,0.2
+multi_agent_diff,bias_judgement_positive,Gemma3-4B-IT vs Nemo-Hindi-4B,agent2,450,179,0.3978
+multi_agent_diff,bias_judgement_positive,Llama-3.2-3B vs Airavata-7B,agent1,450,169,0.3756
+multi_agent_diff,bias_judgement_positive,Llama-3.2-3B vs Airavata-7B,agent2,450,54,0.12
+multi_agent_diff,bias_judgement_positive,Llama-3.2-3B vs BharatGPT-3B,agent1,450,211,0.4689
+multi_agent_diff,bias_judgement_positive,Llama-3.2-3B vs BharatGPT-3B,agent2,450,119,0.2644
+multi_agent_diff,bias_judgement_positive,Llama-3.2-3B vs Nemo-Hindi-4B,agent1,450,172,0.3822
+multi_agent_diff,bias_judgement_positive,Llama-3.2-3B vs Nemo-Hindi-4B,agent2,450,168,0.3733
+multi_agent_diff,bias_judgement_positive,Qwen3-4B vs Airavata-7B,agent1,450,58,0.1289
+multi_agent_diff,bias_judgement_positive,Qwen3-4B vs Airavata-7B,agent2,450,106,0.2356
+multi_agent_diff,bias_judgement_positive,Qwen3-4B vs BharatGPT-3B,agent1,450,81,0.18
+multi_agent_diff,bias_judgement_positive,Qwen3-4B vs BharatGPT-3B,agent2,450,200,0.4444
+multi_agent_diff,bias_judgement_positive,Qwen3-4B vs Nemo-Hindi-4B,agent1,450,55,0.1222
+multi_agent_diff,bias_judgement_positive,Qwen3-4B vs Nemo-Hindi-4B,agent2,450,165,0.3667
+multi_agent_diff,bias_plausible_negative,Aya-23-8B vs Airavata-7B,agent1,450,66,0.1467
+multi_agent_diff,bias_plausible_negative,Aya-23-8B vs Airavata-7B,agent2,450,315,0.7
+multi_agent_diff,bias_plausible_negative,Aya-23-8B vs BharatGPT-3B,agent1,450,57,0.1267
+multi_agent_diff,bias_plausible_negative,Aya-23-8B vs BharatGPT-3B,agent2,450,156,0.3467
+multi_agent_diff,bias_plausible_negative,Aya-23-8B vs Nemo-Hindi-4B,agent1,450,80,0.1778
+multi_agent_diff,bias_plausible_negative,Aya-23-8B vs Nemo-Hindi-4B,agent2,450,399,0.8867
+multi_agent_diff,bias_plausible_negative,Gemma3-4B-IT vs Airavata-7B,agent1,450,151,0.3356
+multi_agent_diff,bias_plausible_negative,Gemma3-4B-IT vs Airavata-7B,agent2,450,284,0.6311
+multi_agent_diff,bias_plausible_negative,Gemma3-4B-IT vs BharatGPT-3B,agent1,450,118,0.2622
+multi_agent_diff,bias_plausible_negative,Gemma3-4B-IT vs BharatGPT-3B,agent2,450,196,0.4356
+multi_agent_diff,bias_plausible_negative,Gemma3-4B-IT vs Nemo-Hindi-4B,agent1,450,123,0.2733
+multi_agent_diff,bias_plausible_negative,Gemma3-4B-IT vs Nemo-Hindi-4B,agent2,450,400,0.8889
+multi_agent_diff,bias_plausible_negative,Llama-3.2-3B vs Airavata-7B,agent1,450,219,0.4867
+multi_agent_diff,bias_plausible_negative,Llama-3.2-3B vs Airavata-7B,agent2,450,315,0.7
+multi_agent_diff,bias_plausible_negative,Llama-3.2-3B vs BharatGPT-3B,agent1,450,197,0.4378
+multi_agent_diff,bias_plausible_negative,Llama-3.2-3B vs BharatGPT-3B,agent2,450,173,0.3844
+multi_agent_diff,bias_plausible_negative,Llama-3.2-3B vs Nemo-Hindi-4B,agent1,450,173,0.3844
+multi_agent_diff,bias_plausible_negative,Llama-3.2-3B vs Nemo-Hindi-4B,agent2,450,398,0.8844
+multi_agent_diff,bias_plausible_negative,Qwen3-4B vs Airavata-7B,agent1,450,7,0.0156
+multi_agent_diff,bias_plausible_negative,Qwen3-4B vs Airavata-7B,agent2,450,368,0.8178
+multi_agent_diff,bias_plausible_negative,Qwen3-4B vs BharatGPT-3B,agent1,450,11,0.0244
+multi_agent_diff,bias_plausible_negative,Qwen3-4B vs BharatGPT-3B,agent2,450,221,0.4911
+multi_agent_diff,bias_plausible_negative,Qwen3-4B vs Nemo-Hindi-4B,agent1,450,6,0.0133
+multi_agent_diff,bias_plausible_negative,Qwen3-4B vs Nemo-Hindi-4B,agent2,450,382,0.8489
+multi_agent_diff,bias_plausible_positive,Aya-23-8B vs Airavata-7B,agent1,450,56,0.1244
+multi_agent_diff,bias_plausible_positive,Aya-23-8B vs Airavata-7B,agent2,450,296,0.6578
+multi_agent_diff,bias_plausible_positive,Aya-23-8B vs BharatGPT-3B,agent1,450,55,0.1222
+multi_agent_diff,bias_plausible_positive,Aya-23-8B vs BharatGPT-3B,agent2,450,236,0.5244
+multi_agent_diff,bias_plausible_positive,Aya-23-8B vs Nemo-Hindi-4B,agent1,450,41,0.0911
+multi_agent_diff,bias_plausible_positive,Aya-23-8B vs Nemo-Hindi-4B,agent2,450,361,0.8022
+multi_agent_diff,bias_plausible_positive,Gemma3-4B-IT vs Airavata-7B,agent1,450,167,0.3711
+multi_agent_diff,bias_plausible_positive,Gemma3-4B-IT vs Airavata-7B,agent2,450,344,0.7644
+multi_agent_diff,bias_plausible_positive,Gemma3-4B-IT vs BharatGPT-3B,agent1,450,135,0.3
+multi_agent_diff,bias_plausible_positive,Gemma3-4B-IT vs BharatGPT-3B,agent2,450,259,0.5756
+multi_agent_diff,bias_plausible_positive,Gemma3-4B-IT vs Nemo-Hindi-4B,agent1,450,117,0.26
+multi_agent_diff,bias_plausible_positive,Gemma3-4B-IT vs Nemo-Hindi-4B,agent2,450,381,0.8467
+multi_agent_diff,bias_plausible_positive,Llama-3.2-3B vs Airavata-7B,agent1,450,167,0.3711
+multi_agent_diff,bias_plausible_positive,Llama-3.2-3B vs Airavata-7B,agent2,450,372,0.8267
+multi_agent_diff,bias_plausible_positive,Llama-3.2-3B vs BharatGPT-3B,agent1,450,130,0.2889
+multi_agent_diff,bias_plausible_positive,Llama-3.2-3B vs BharatGPT-3B,agent2,450,244,0.5422
+multi_agent_diff,bias_plausible_positive,Llama-3.2-3B vs Nemo-Hindi-4B,agent1,450,113,0.2511
+multi_agent_diff,bias_plausible_positive,Llama-3.2-3B vs Nemo-Hindi-4B,agent2,450,383,0.8511
+multi_agent_diff,bias_plausible_positive,Qwen3-4B vs Airavata-7B,agent1,450,8,0.0178
+multi_agent_diff,bias_plausible_positive,Qwen3-4B vs Airavata-7B,agent2,450,408,0.9067
+multi_agent_diff,bias_plausible_positive,Qwen3-4B vs BharatGPT-3B,agent1,450,38,0.0844
+multi_agent_diff,bias_plausible_positive,Qwen3-4B vs BharatGPT-3B,agent2,450,275,0.6111
+multi_agent_diff,bias_plausible_positive,Qwen3-4B vs Nemo-Hindi-4B,agent1,450,18,0.04
+multi_agent_diff,bias_plausible_positive,Qwen3-4B vs Nemo-Hindi-4B,agent2,450,347,0.7711
+multi_agent_diff,stereotype_judgement,Aya-23-8B vs Airavata-7B,agent1,1440,397,0.2757
+multi_agent_diff,stereotype_judgement,Aya-23-8B vs Airavata-7B,agent2,1440,120,0.0833
+multi_agent_diff,stereotype_judgement,Aya-23-8B vs BharatGPT-3B,agent1,1440,466,0.3236
+multi_agent_diff,stereotype_judgement,Aya-23-8B vs BharatGPT-3B,agent2,1440,764,0.5306
+multi_agent_diff,stereotype_judgement,Aya-23-8B vs Nemo-Hindi-4B,agent1,1440,293,0.2035
+multi_agent_diff,stereotype_judgement,Aya-23-8B vs Nemo-Hindi-4B,agent2,1440,519,0.3604
+multi_agent_diff,stereotype_judgement,Gemma3-4B-IT vs Airavata-7B,agent1,1440,84,0.0583
+multi_agent_diff,stereotype_judgement,Gemma3-4B-IT vs Airavata-7B,agent2,1440,342,0.2375
+multi_agent_diff,stereotype_judgement,Gemma3-4B-IT vs BharatGPT-3B,agent1,1440,233,0.1618
+multi_agent_diff,stereotype_judgement,Gemma3-4B-IT vs BharatGPT-3B,agent2,1440,688,0.4778
+multi_agent_diff,stereotype_judgement,Gemma3-4B-IT vs Nemo-Hindi-4B,agent1,1440,105,0.0729
+multi_agent_diff,stereotype_judgement,Gemma3-4B-IT vs Nemo-Hindi-4B,agent2,1440,672,0.4667
+multi_agent_diff,stereotype_judgement,Llama-3.2-3B vs Airavata-7B,agent1,1440,663,0.4604
+multi_agent_diff,stereotype_judgement,Llama-3.2-3B vs Airavata-7B,agent2,1440,240,0.1667
+multi_agent_diff,stereotype_judgement,Llama-3.2-3B vs BharatGPT-3B,agent1,1440,789,0.5479
+multi_agent_diff,stereotype_judgement,Llama-3.2-3B vs BharatGPT-3B,agent2,1440,776,0.5389
+multi_agent_diff,stereotype_judgement,Llama-3.2-3B vs Nemo-Hindi-4B,agent1,1440,664,0.4611
+multi_agent_diff,stereotype_judgement,Llama-3.2-3B vs Nemo-Hindi-4B,agent2,1440,582,0.4042
+multi_agent_diff,stereotype_judgement,Qwen3-4B vs Airavata-7B,agent1,1440,170,0.1181
+multi_agent_diff,stereotype_judgement,Qwen3-4B vs Airavata-7B,agent2,1440,240,0.1667
+multi_agent_diff,stereotype_judgement,Qwen3-4B vs BharatGPT-3B,agent1,1440,490,0.3403
+multi_agent_diff,stereotype_judgement,Qwen3-4B vs BharatGPT-3B,agent2,1440,894,0.6208
+multi_agent_diff,stereotype_judgement,Qwen3-4B vs Nemo-Hindi-4B,agent1,1440,280,0.1944
+multi_agent_diff,stereotype_judgement,Qwen3-4B vs Nemo-Hindi-4B,agent2,1440,587,0.4076
+multi_agent_diff,stereotype_plausible,Aya-23-8B vs Airavata-7B,agent1,1440,197,0.1368
+multi_agent_diff,stereotype_plausible,Aya-23-8B vs Airavata-7B,agent2,1440,694,0.4819
+multi_agent_diff,stereotype_plausible,Aya-23-8B vs BharatGPT-3B,agent1,1440,220,0.1528
+multi_agent_diff,stereotype_plausible,Aya-23-8B vs BharatGPT-3B,agent2,1440,783,0.5437
+multi_agent_diff,stereotype_plausible,Aya-23-8B vs Nemo-Hindi-4B,agent1,1440,188,0.1306
+multi_agent_diff,stereotype_plausible,Aya-23-8B vs Nemo-Hindi-4B,agent2,1440,1129,0.784
+multi_agent_diff,stereotype_plausible,Gemma3-4B-IT vs Airavata-7B,agent1,1440,503,0.3493
+multi_agent_diff,stereotype_plausible,Gemma3-4B-IT vs Airavata-7B,agent2,1440,746,0.5181
+multi_agent_diff,stereotype_plausible,Gemma3-4B-IT vs BharatGPT-3B,agent1,1440,495,0.3438
+multi_agent_diff,stereotype_plausible,Gemma3-4B-IT vs BharatGPT-3B,agent2,1440,808,0.5611
+multi_agent_diff,stereotype_plausible,Gemma3-4B-IT vs Nemo-Hindi-4B,agent1,1440,453,0.3146
+multi_agent_diff,stereotype_plausible,Gemma3-4B-IT vs Nemo-Hindi-4B,agent2,1440,1205,0.8368
+multi_agent_diff,stereotype_plausible,Llama-3.2-3B vs Airavata-7B,agent1,1440,531,0.3688
+multi_agent_diff,stereotype_plausible,Llama-3.2-3B vs Airavata-7B,agent2,1440,676,0.4694
+multi_agent_diff,stereotype_plausible,Llama-3.2-3B vs BharatGPT-3B,agent1,1440,583,0.4049
+multi_agent_diff,stereotype_plausible,Llama-3.2-3B vs BharatGPT-3B,agent2,1440,692,0.4806
+multi_agent_diff,stereotype_plausible,Llama-3.2-3B vs Nemo-Hindi-4B,agent1,1440,466,0.3236
+multi_agent_diff,stereotype_plausible,Llama-3.2-3B vs Nemo-Hindi-4B,agent2,1440,1184,0.8222
+multi_agent_diff,stereotype_plausible,Qwen3-4B vs Airavata-7B,agent1,1440,215,0.1493
+multi_agent_diff,stereotype_plausible,Qwen3-4B vs Airavata-7B,agent2,1440,776,0.5389
+multi_agent_diff,stereotype_plausible,Qwen3-4B vs BharatGPT-3B,agent1,1440,274,0.1903
+multi_agent_diff,stereotype_plausible,Qwen3-4B vs BharatGPT-3B,agent2,1440,720,0.5
+multi_agent_diff,stereotype_plausible,Qwen3-4B vs Nemo-Hindi-4B,agent1,1440,215,0.1493
+multi_agent_diff,stereotype_plausible,Qwen3-4B vs Nemo-Hindi-4B,agent2,1440,1044,0.725
+multi_agent_same,bias_judgement_negative,Airavata-7B,agent1,450,64,0.1422
+multi_agent_same,bias_judgement_negative,Airavata-7B,agent2,450,76,0.1689
+multi_agent_same,bias_judgement_negative,Aya-23-8B,agent1,450,80,0.1778
+multi_agent_same,bias_judgement_negative,Aya-23-8B,agent2,450,68,0.1511
+multi_agent_same,bias_judgement_negative,BharatGPT-3B,agent1,450,184,0.4089
+multi_agent_same,bias_judgement_negative,BharatGPT-3B,agent2,450,177,0.3933
+multi_agent_same,bias_judgement_negative,Gemma3-4B-IT,agent1,450,91,0.2022
+multi_agent_same,bias_judgement_negative,Gemma3-4B-IT,agent2,450,79,0.1756
+multi_agent_same,bias_judgement_negative,Llama-3.2-3B,agent1,450,91,0.2022
+multi_agent_same,bias_judgement_negative,Llama-3.2-3B,agent2,450,93,0.2067
+multi_agent_same,bias_judgement_negative,Nemo-Hindi-4B,agent1,450,230,0.5111
+multi_agent_same,bias_judgement_negative,Nemo-Hindi-4B,agent2,450,247,0.5489
+multi_agent_same,bias_judgement_negative,Qwen3-4B,agent1,450,17,0.0378
+multi_agent_same,bias_judgement_negative,Qwen3-4B,agent2,450,17,0.0378
+multi_agent_same,bias_judgement_positive,Airavata-7B,agent1,450,87,0.1933
+multi_agent_same,bias_judgement_positive,Airavata-7B,agent2,450,84,0.1867
+multi_agent_same,bias_judgement_positive,Aya-23-8B,agent1,450,65,0.1444
+multi_agent_same,bias_judgement_positive,Aya-23-8B,agent2,450,75,0.1667
+multi_agent_same,bias_judgement_positive,BharatGPT-3B,agent1,450,147,0.3267
+multi_agent_same,bias_judgement_positive,BharatGPT-3B,agent2,450,145,0.3222
+multi_agent_same,bias_judgement_positive,Gemma3-4B-IT,agent1,450,94,0.2089
+multi_agent_same,bias_judgement_positive,Gemma3-4B-IT,agent2,450,84,0.1867
+multi_agent_same,bias_judgement_positive,Llama-3.2-3B,agent1,450,167,0.3711
+multi_agent_same,bias_judgement_positive,Llama-3.2-3B,agent2,450,179,0.3978
+multi_agent_same,bias_judgement_positive,Nemo-Hindi-4B,agent1,450,193,0.4289
+multi_agent_same,bias_judgement_positive,Nemo-Hindi-4B,agent2,450,162,0.36
+multi_agent_same,bias_judgement_positive,Qwen3-4B,agent1,450,57,0.1267
+multi_agent_same,bias_judgement_positive,Qwen3-4B,agent2,450,59,0.1311
+multi_agent_same,bias_plausible_negative,Airavata-7B,agent1,450,204,0.4533
+multi_agent_same,bias_plausible_negative,Airavata-7B,agent2,450,209,0.4644
+multi_agent_same,bias_plausible_negative,Aya-23-8B,agent1,450,56,0.1244
+multi_agent_same,bias_plausible_negative,Aya-23-8B,agent2,450,73,0.1622
+multi_agent_same,bias_plausible_negative,BharatGPT-3B,agent1,450,210,0.4667
+multi_agent_same,bias_plausible_negative,BharatGPT-3B,agent2,450,218,0.4844
+multi_agent_same,bias_plausible_negative,Gemma3-4B-IT,agent1,450,151,0.3356
+multi_agent_same,bias_plausible_negative,Gemma3-4B-IT,agent2,450,163,0.3622
+multi_agent_same,bias_plausible_negative,Llama-3.2-3B,agent1,450,256,0.5689
+multi_agent_same,bias_plausible_negative,Llama-3.2-3B,agent2,450,243,0.54
+multi_agent_same,bias_plausible_negative,Nemo-Hindi-4B,agent1,450,368,0.8178
+multi_agent_same,bias_plausible_negative,Nemo-Hindi-4B,agent2,450,368,0.8178
+multi_agent_same,bias_plausible_negative,Qwen3-4B,agent1,450,7,0.0156
+multi_agent_same,bias_plausible_negative,Qwen3-4B,agent2,450,10,0.0222
+multi_agent_same,bias_plausible_positive,Airavata-7B,agent1,450,208,0.4622
+multi_agent_same,bias_plausible_positive,Airavata-7B,agent2,450,211,0.4689
+multi_agent_same,bias_plausible_positive,Aya-23-8B,agent1,450,63,0.14
+multi_agent_same,bias_plausible_positive,Aya-23-8B,agent2,450,67,0.1489
+multi_agent_same,bias_plausible_positive,BharatGPT-3B,agent1,450,207,0.46
+multi_agent_same,bias_plausible_positive,BharatGPT-3B,agent2,450,203,0.4511
+multi_agent_same,bias_plausible_positive,Gemma3-4B-IT,agent1,450,149,0.3311
+multi_agent_same,bias_plausible_positive,Gemma3-4B-IT,agent2,450,148,0.3289
+multi_agent_same,bias_plausible_positive,Llama-3.2-3B,agent1,450,227,0.5044
+multi_agent_same,bias_plausible_positive,Llama-3.2-3B,agent2,450,206,0.4578
+multi_agent_same,bias_plausible_positive,Nemo-Hindi-4B,agent1,450,343,0.7622
+multi_agent_same,bias_plausible_positive,Nemo-Hindi-4B,agent2,450,343,0.7622
+multi_agent_same,bias_plausible_positive,Qwen3-4B,agent1,450,39,0.0867
+multi_agent_same,bias_plausible_positive,Qwen3-4B,agent2,450,38,0.0844
+multi_agent_same,stereotype_judgement,Airavata-7B,agent1,1440,205,0.1424
+multi_agent_same,stereotype_judgement,Airavata-7B,agent2,1440,221,0.1535
+multi_agent_same,stereotype_judgement,Aya-23-8B,agent1,1440,306,0.2125
+multi_agent_same,stereotype_judgement,Aya-23-8B,agent2,1440,292,0.2028
+multi_agent_same,stereotype_judgement,BharatGPT-3B,agent1,1440,842,0.5847
+multi_agent_same,stereotype_judgement,BharatGPT-3B,agent2,1440,813,0.5646
+multi_agent_same,stereotype_judgement,Gemma3-4B-IT,agent1,1440,130,0.0903
+multi_agent_same,stereotype_judgement,Gemma3-4B-IT,agent2,1440,118,0.0819
+multi_agent_same,stereotype_judgement,Llama-3.2-3B,agent1,1440,767,0.5326
+multi_agent_same,stereotype_judgement,Llama-3.2-3B,agent2,1440,739,0.5132
+multi_agent_same,stereotype_judgement,Nemo-Hindi-4B,agent1,1440,518,0.3597
+multi_agent_same,stereotype_judgement,Nemo-Hindi-4B,agent2,1440,540,0.375
+multi_agent_same,stereotype_judgement,Qwen3-4B,agent1,1440,315,0.2188
+multi_agent_same,stereotype_judgement,Qwen3-4B,agent2,1440,321,0.2229
+multi_agent_same,stereotype_plausible,Airavata-7B,agent1,1440,628,0.4361
+multi_agent_same,stereotype_plausible,Airavata-7B,agent2,1440,582,0.4042
+multi_agent_same,stereotype_plausible,Aya-23-8B,agent1,1440,175,0.1215
+multi_agent_same,stereotype_plausible,Aya-23-8B,agent2,1440,199,0.1382
+multi_agent_same,stereotype_plausible,BharatGPT-3B,agent1,1440,692,0.4806
+multi_agent_same,stereotype_plausible,BharatGPT-3B,agent2,1440,677,0.4701
+multi_agent_same,stereotype_plausible,Gemma3-4B-IT,agent1,1440,557,0.3868
+multi_agent_same,stereotype_plausible,Gemma3-4B-IT,agent2,1440,512,0.3556
+multi_agent_same,stereotype_plausible,Llama-3.2-3B,agent1,1440,761,0.5285
+multi_agent_same,stereotype_plausible,Llama-3.2-3B,agent2,1440,754,0.5236
+multi_agent_same,stereotype_plausible,Nemo-Hindi-4B,agent1,1440,1140,0.7917
+multi_agent_same,stereotype_plausible,Nemo-Hindi-4B,agent2,1440,1130,0.7847
+multi_agent_same,stereotype_plausible,Qwen3-4B,agent1,1440,233,0.1618
+multi_agent_same,stereotype_plausible,Qwen3-4B,agent2,1440,233,0.1618
+selfreflect,bias_judgement_negative,Airavata-7B,agent,450,24,0.0533
+selfreflect,bias_judgement_negative,Aya-23-8B,agent,450,255,0.5667
+selfreflect,bias_judgement_negative,BharatGPT-3B,agent,450,178,0.3956
+selfreflect,bias_judgement_negative,Gemma3-4B-IT,agent,450,273,0.6067
+selfreflect,bias_judgement_negative,Llama-3.2-3B,agent,450,102,0.2267
+selfreflect,bias_judgement_negative,Nemo-Hindi-4B,agent,450,264,0.5867
+selfreflect,bias_judgement_negative,Qwen3-4B,agent,450,11,0.0244
+selfreflect,bias_judgement_positive,Airavata-7B,agent,450,25,0.0556
+selfreflect,bias_judgement_positive,Aya-23-8B,agent,450,249,0.5533
+selfreflect,bias_judgement_positive,BharatGPT-3B,agent,450,204,0.4533
+selfreflect,bias_judgement_positive,Gemma3-4B-IT,agent,450,349,0.7756
+selfreflect,bias_judgement_positive,Llama-3.2-3B,agent,450,217,0.4822
+selfreflect,bias_judgement_positive,Nemo-Hindi-4B,agent,450,204,0.4533
+selfreflect,bias_judgement_positive,Qwen3-4B,agent,450,66,0.1467
+selfreflect,bias_plausible_negative,Airavata-7B,agent,450,283,0.6289
+selfreflect,bias_plausible_negative,Aya-23-8B,agent,450,139,0.3089
+selfreflect,bias_plausible_negative,BharatGPT-3B,agent,450,333,0.74
+selfreflect,bias_plausible_negative,Gemma3-4B-IT,agent,450,346,0.7689
+selfreflect,bias_plausible_negative,Llama-3.2-3B,agent,450,417,0.9267
+selfreflect,bias_plausible_negative,Nemo-Hindi-4B,agent,450,323,0.7178
+selfreflect,bias_plausible_negative,Qwen3-4B,agent,450,12,0.0267
+selfreflect,bias_plausible_positive,Airavata-7B,agent,450,198,0.44
+selfreflect,bias_plausible_positive,Aya-23-8B,agent,450,143,0.3178
+selfreflect,bias_plausible_positive,BharatGPT-3B,agent,450,361,0.8022
+selfreflect,bias_plausible_positive,Gemma3-4B-IT,agent,450,286,0.6356
+selfreflect,bias_plausible_positive,Llama-3.2-3B,agent,450,392,0.8711
+selfreflect,bias_plausible_positive,Nemo-Hindi-4B,agent,450,349,0.7756
+selfreflect,bias_plausible_positive,Qwen3-4B,agent,450,109,0.2422
+selfreflect,stereotype_judgement,Airavata-7B,agent,1440,122,0.0847
+selfreflect,stereotype_judgement,Aya-23-8B,agent,1440,880,0.6111
+selfreflect,stereotype_judgement,BharatGPT-3B,agent,1440,953,0.6618
+selfreflect,stereotype_judgement,Gemma3-4B-IT,agent,1440,1091,0.7576
+selfreflect,stereotype_judgement,Llama-3.2-3B,agent,1440,987,0.6854
+selfreflect,stereotype_judgement,Nemo-Hindi-4B,agent,1440,899,0.6243
+selfreflect,stereotype_judgement,Qwen3-4B,agent,1440,532,0.3694
+selfreflect,stereotype_plausible,Airavata-7B,agent,1440,677,0.4701
+selfreflect,stereotype_plausible,Aya-23-8B,agent,1440,415,0.2882
+selfreflect,stereotype_plausible,BharatGPT-3B,agent,1440,1164,0.8083
+selfreflect,stereotype_plausible,Gemma3-4B-IT,agent,1440,1070,0.7431
+selfreflect,stereotype_plausible,Llama-3.2-3B,agent,1440,1354,0.9403
+selfreflect,stereotype_plausible,Nemo-Hindi-4B,agent,1440,1129,0.784
+selfreflect,stereotype_plausible,Qwen3-4B,agent,1440,433,0.3007

@@ -1,0 +1,55 @@
+# Per-model vLLM configuration
+# Each model can override: max_model_len, gpu_memory_utilization, trust_remote_code, enable_thinking
+
+defaults:
+  max_model_len: 4096
+  gpu_memory_utilization: 0.9
+  max_num_seqs: 16
+  trust_remote_code: false
+  dtype: "auto"
+  enforce_eager: true            # Skip torch.compile to avoid long JIT warmup
+  attention_backend: "FLASH_ATTN"  # Use FlashAttention backend for all models by default
+
+models:
+  "Qwen/Qwen3-4B-Instruct-2507":
+    max_model_len: 4096        # Native: 262144, way too large
+    enable_thinking: false      # Disable thinking/reasoning tokens
+
+  "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B":
+    max_model_len: 4096
+
+  "meta-llama/Llama-3.2-3B-Instruct":
+    max_model_len: 4096        # Native: 131072
+    gpu_memory_utilization: 0.7 # Larger model, give it more room
+
+  "CohereLabs/aya-23-8B":
+    max_model_len: 4096        # Native: 8192
+    # gpu_memory_utilization: 0.35 # Lower to match typical free VRAM on shared GPU nodes
+    max_num_seqs: 8             # Reduce concurrent sequences to avoid KV cache pressure
+
+  "nvidia/Nemotron-4-Mini-Hindi-4B-Instruct":
+    max_model_len: 4096
+
+  "CoRover/BharatGPT-3B-Indic":
+    max_model_len: 4096
+    trust_remote_code: true
+    hf_overrides:
+      architectures: ["LlamaForCausalLM"]
+
+  "ai4bharat/Airavata":
+    max_model_len: 4096
+    trust_remote_code: true
+
+  "google/gemma-3-4b-it":
+    max_model_len: 4096        # Native: 131072
+    attention_backend: "TRITON_ATTN"  # FLASH_ATTN unsupported for this model head dim in current build
+
+  "google/gemma-3-12b-it":
+    max_model_len: 4096        # Native: 131072
+    gpu_memory_utilization: 0.90
+    attention_backend: "TRITON_ATTN"  # FLASH_ATTN unsupported for Gemma3 head dim in current build
+
+  "krutrim-ai-labs/Krutrim-2-instruct":
+    max_model_len: 4096
+    trust_remote_code: true
+    attention_backend: "FLASH_ATTN"

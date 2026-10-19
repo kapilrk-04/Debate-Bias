@@ -1,0 +1,10 @@
+task,identity,fairest_source,min_spread
+stereotype_judgement,assamese,GPT(D),0.3875
+stereotype_judgement,bengali,Krutrim(D),0.5562
+stereotype_judgement,gujarati,Self-Reflect,0.2875
+stereotype_judgement,kannadiga,Self-Reflect,0.2438
+stereotype_judgement,malayali,Self-Reflect,0.5313
+stereotype_judgement,marathi,Krutrim(D),0.45
+stereotype_judgement,punjabi,Krutrim(D),0.2062
+stereotype_judgement,tamil,Krutrim(D),0.3438
+stereotype_judgement,telugu,Self-Reflect,0.2187

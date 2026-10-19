@@ -1,0 +1,17 @@
+source,task,n_records,n_identities,top_identity,top_elo
+single_llm,judgement,6300,10,Bengali,1010.43
+single_llm,plausible,6300,10,Malayali,1009.55
+selfreflect,judgement,6300,10,Assamese,1008.39
+selfreflect,plausible,6300,10,Bengali,1005.91
+gemma_diff,judgement,10800,10,Assamese,1012.21
+gemma_diff,plausible,10800,10,Bengali,1009.7
+gemma_same,judgement,6300,10,Assamese,1012.05
+gemma_same,plausible,6300,10,Bengali,1006.54
+gpt_diff,judgement,10800,10,Assamese,1012.36
+gpt_diff,plausible,10800,10,Bengali,1011.19
+gpt_same,judgement,6300,10,Assamese,1012.69
+gpt_same,plausible,6300,10,Bengali,1007.48
+indic_diff,judgement,10800,10,Assamese,1012.44
+indic_diff,plausible,10800,10,Punjabi,1010.87
+indic_same,judgement,6300,10,Assamese,1011.84
+indic_same,plausible,6300,10,Malayali,1005.91

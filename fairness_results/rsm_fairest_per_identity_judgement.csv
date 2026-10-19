@@ -1,0 +1,11 @@
+task,identity,fairest_source,min_spread
+judgement,Assamese,Self-Reflect,25.4708
+judgement,Bengali,Krutrim(D),19.7288
+judgement,Gujarati,Krutrim(D),27.3349
+judgement,Hindi,Single-LLM,8.0465
+judgement,Kannadiga,GPT(D),13.3936
+judgement,Malayali,Gemma(S),15.3493
+judgement,Marathi,Self-Reflect,9.3618
+judgement,Punjabi,Krutrim(S),17.4442
+judgement,Tamil,Single-LLM,11.2371
+judgement,Telugu,Self-Reflect,12.0268

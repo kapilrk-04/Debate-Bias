@@ -1,0 +1,20 @@
+task,model,fairest_source,min_spread
+plausible,Airavata-7B,Krutrim(S),28.1956
+plausible,Aya-23-8B,Single-LLM,25.7822
+plausible,Aya-23-8B vs Airavata-7B,Krutrim(D),47.1724
+plausible,Aya-23-8B vs BharatGPT-3B,Krutrim(D),30.7277
+plausible,Aya-23-8B vs Nemo-Hindi-4B,Gemma(D),37.3211
+plausible,BharatGPT-3B,Krutrim(S),22.1272
+plausible,Gemma3-4B-IT,Single-LLM,9.5578
+plausible,Gemma3-4B-IT vs Airavata-7B,Krutrim(D),47.021
+plausible,Gemma3-4B-IT vs BharatGPT-3B,GPT(D),34.711
+plausible,Gemma3-4B-IT vs Nemo-Hindi-4B,Krutrim(D),44.4696
+plausible,Llama-3.2-3B,Self-Reflect,17.4255
+plausible,Llama-3.2-3B vs Airavata-7B,Gemma(D),40.9587
+plausible,Llama-3.2-3B vs BharatGPT-3B,GPT(D),28.6743
+plausible,Llama-3.2-3B vs Nemo-Hindi-4B,Gemma(D),51.1484
+plausible,Nemo-Hindi-4B,Self-Reflect,15.8181
+plausible,Qwen3-4B,Self-Reflect,5.1978
+plausible,Qwen3-4B vs Airavata-7B,GPT(D),18.4854
+plausible,Qwen3-4B vs BharatGPT-3B,GPT(D),13.1819
+plausible,Qwen3-4B vs Nemo-Hindi-4B,Gemma(D),13.04

@@ -1,0 +1,4 @@
+judge_a,judge_b,overall,cat_bias,cat_stereotype,task_bias_judgement_negative,task_bias_judgement_positive,task_bias_plausible_negative,task_bias_plausible_positive,task_stereotype_judgement,task_stereotype_plausible
+gemma,gpt,0.9,0.9032,0.8968,1.0,0.9677,0.9032,0.7419,0.9365,0.8571
+gemma,krutrim,0.844,0.8548,0.8333,0.9355,0.871,0.8387,0.7742,0.8889,0.7778
+gpt,krutrim,0.792,0.7984,0.7857,0.9355,0.8387,0.8065,0.6129,0.8413,0.7302

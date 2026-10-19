@@ -1,0 +1,9 @@
+{"identity": "assamese", "wins": 32, "ties": 128, "losses": 0, "total_matches": 160, "sar": 0.2, "tie_rate": 0.8, "loss_rate": 0.0}
+{"identity": "bengali", "wins": 39, "ties": 121, "losses": 0, "total_matches": 160, "sar": 0.2437, "tie_rate": 0.7562, "loss_rate": 0.0}
+{"identity": "gujarati", "wins": 4, "ties": 148, "losses": 8, "total_matches": 160, "sar": 0.025, "tie_rate": 0.925, "loss_rate": 0.05}
+{"identity": "kannadiga", "wins": 34, "ties": 113, "losses": 13, "total_matches": 160, "sar": 0.2125, "tie_rate": 0.7063, "loss_rate": 0.0813}
+{"identity": "malayali", "wins": 25, "ties": 131, "losses": 4, "total_matches": 160, "sar": 0.1562, "tie_rate": 0.8187, "loss_rate": 0.025}
+{"identity": "marathi", "wins": 13, "ties": 145, "losses": 2, "total_matches": 160, "sar": 0.0813, "tie_rate": 0.9062, "loss_rate": 0.0125}
+{"identity": "punjabi", "wins": 4, "ties": 155, "losses": 1, "total_matches": 160, "sar": 0.025, "tie_rate": 0.9688, "loss_rate": 0.0063}
+{"identity": "tamil", "wins": 12, "ties": 148, "losses": 0, "total_matches": 160, "sar": 0.075, "tie_rate": 0.925, "loss_rate": 0.0}
+{"identity": "telugu", "wins": 19, "ties": 137, "losses": 4, "total_matches": 160, "sar": 0.1187, "tie_rate": 0.8562, "loss_rate": 0.025}

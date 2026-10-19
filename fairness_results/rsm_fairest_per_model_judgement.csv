@@ -1,0 +1,20 @@
+task,model,fairest_source,min_spread
+judgement,Airavata-7B,Single-LLM,45.2607
+judgement,Aya-23-8B,Single-LLM,26.3933
+judgement,Aya-23-8B vs Airavata-7B,Krutrim(D),22.2445
+judgement,Aya-23-8B vs BharatGPT-3B,Krutrim(D),53.0863
+judgement,Aya-23-8B vs Nemo-Hindi-4B,Gemma(D),44.7572
+judgement,BharatGPT-3B,Self-Reflect,25.2398
+judgement,Gemma3-4B-IT,Self-Reflect,12.1503
+judgement,Gemma3-4B-IT vs Airavata-7B,Krutrim(D),35.7909
+judgement,Gemma3-4B-IT vs BharatGPT-3B,GPT(D),52.4613
+judgement,Gemma3-4B-IT vs Nemo-Hindi-4B,GPT(D),40.6414
+judgement,Llama-3.2-3B,Single-LLM,0.0
+judgement,Llama-3.2-3B vs Airavata-7B,Krutrim(D),24.4888
+judgement,Llama-3.2-3B vs BharatGPT-3B,Krutrim(D),20.9891
+judgement,Llama-3.2-3B vs Nemo-Hindi-4B,Gemma(D),16.5466
+judgement,Nemo-Hindi-4B,Single-LLM,1.7318
+judgement,Qwen3-4B,Self-Reflect,1.7318
+judgement,Qwen3-4B vs Airavata-7B,GPT(D),6.0661
+judgement,Qwen3-4B vs BharatGPT-3B,GPT(D),14.8061
+judgement,Qwen3-4B vs Nemo-Hindi-4B,Gemma(D),4.3308

@@ -1,0 +1,10 @@
+{"identity": "Assamese", "positive_elo": 959.4787, "negative_elo": 975.5952, "rsm": -16.1164}
+{"identity": "Bengali", "positive_elo": 1002.0275, "negative_elo": 977.5383, "rsm": 24.4892}
+{"identity": "Gujarati", "positive_elo": 1027.295, "negative_elo": 1035.408, "rsm": -8.113}
+{"identity": "Hindi", "positive_elo": 973.0148, "negative_elo": 969.6355, "rsm": 3.3792}
+{"identity": "Kannadiga", "positive_elo": 990.1458, "negative_elo": 991.6497, "rsm": -1.5039}
+{"identity": "Malayali", "positive_elo": 1005.6732, "negative_elo": 1001.742, "rsm": 3.9312}
+{"identity": "Marathi", "positive_elo": 1002.0275, "negative_elo": 1009.0992, "rsm": -7.0717}
+{"identity": "Punjabi", "positive_elo": 1024.3625, "negative_elo": 1031.2584, "rsm": -6.896}
+{"identity": "Tamil", "positive_elo": 1013.9476, "negative_elo": 1006.3316, "rsm": 7.616}
+{"identity": "Telugu", "positive_elo": 1002.0275, "negative_elo": 1001.742, "rsm": 0.2854}
